@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="de.devfest.dagger2codelab" >
+    package="com.ricamgar.dagger2codelab" >
 
 	<uses-permission android:name="android.permission.INTERNET"/>
 

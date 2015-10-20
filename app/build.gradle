@@ -5,7 +5,7 @@ android {
 	buildToolsVersion "23.0.1"
 
 	defaultConfig {
-		applicationId "de.devfest.dagger2codelab"
+		applicationId "com.ricamgar.dagger2codelab"
 		minSdkVersion 15
 		targetSdkVersion 23
 		versionCode 1
