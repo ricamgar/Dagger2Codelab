@@ -8,14 +8,15 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
-import de.devfest.dagger2codelab.R;
-import de.devfest.dagger2codelab.data.api.GitHubApi;
-import de.devfest.dagger2codelab.data.api.GitHubApiService;
-import de.devfest.dagger2codelab.data.response.RepositoryResponse;
-import de.devfest.dagger2codelab.ui.adapter.ReposListAdapter;
-
 import java.util.List;
 
+import javax.inject.Inject;
+
+import de.devfest.dagger2codelab.DaggerApp;
+import de.devfest.dagger2codelab.R;
+import de.devfest.dagger2codelab.data.api.GitHubApi;
+import de.devfest.dagger2codelab.data.response.RepositoryResponse;
+import de.devfest.dagger2codelab.ui.adapter.ReposListAdapter;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
@@ -27,7 +28,8 @@ public class RepositoriesActivity extends AppCompatActivity {
 
 	private static final String EXTRA_USER_LOGIN = "de.devfest.dagger2codelab.USER_LOGIN";
 
-	private GitHubApi service;
+	@Inject
+	GitHubApi service;
 
 	public static Intent createIntent(Context context, String login) {
 		Intent intent = new Intent(context, RepositoriesActivity.class);
@@ -38,6 +40,9 @@ public class RepositoriesActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		((DaggerApp)getApplication()).getApplicationComponent().inject(this);
+
 		setContentView(R.layout.activity_main);
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
@@ -50,7 +55,6 @@ public class RepositoriesActivity extends AppCompatActivity {
 		final ReposListAdapter adapter = new ReposListAdapter();
 		reposListView.setAdapter(adapter);
 
-		service = GitHubApiService.get(this);
 		service.getUsersRepositories(getIntent().getStringExtra(EXTRA_USER_LOGIN))
 				.subscribeOn(Schedulers.io())
 				.observeOn(AndroidSchedulers.mainThread())

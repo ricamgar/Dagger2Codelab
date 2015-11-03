@@ -90,6 +90,51 @@ Ok, we have Modules, Components and they are linked together but, how to use the
 
 ### Part 4 - Inject services
 
+We are going to inject the just created dependencies to our Activities. For that, we will use the `@Inject` annotation on the class were we need a dependency.
+
+```java
+	@Inject
+	GitHubApi service;
+```
+
+Note that we removed the `private` modifier. The fields must not be `private` to be accessible from Dagger.
+
+But that´s not all. We need to say to Dagger that our Activity will be part of the injection graph. To do that we create a method on the component that will be used for the Activity.
+
+```java
+void inject(MainActivity activity);
+```
+
+We need now to initialize the Application Component. We are going to initialize it on the Application class using a helper method.
+
+```java
+final class Initializer {
+
+		private Initializer(){}
+
+		public static ApplicationComponent init(ApplicationModule applicationModule) {
+			return DaggerApplicationComponent.builder()
+					.applicationModule(applicationModule)
+					.build();
+		}
+	}
+```
+
+We can then use this helper to initialize the Application Component in our Application class `onCreate()`.
+
+```java
+Initializer.init(new ApplicationModule(this)).inject(this);
+```
+
+Then, on each activity we can get the Application Component and inject the activity to the dependency graph.
+
+```java
+((DaggerApp)getApplication()).getApplicationComponent().inject(this);
+```
+
+Now build, run and enjoy!
+
+
 ### Part 5 - Extend Scopes
 
 ### Part 6 - Testing
