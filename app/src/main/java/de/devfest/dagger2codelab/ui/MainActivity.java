@@ -9,10 +9,7 @@ import android.support.v7.widget.Toolbar;
 import de.devfest.dagger2codelab.DaggerApp;
 import de.devfest.dagger2codelab.R;
 import de.devfest.dagger2codelab.data.api.GitHubApi;
-import de.devfest.dagger2codelab.data.api.GitHubApiService;
 import de.devfest.dagger2codelab.data.response.UserResponse;
-import de.devfest.dagger2codelab.di.components.ApplicationComponent.Initializer;
-import de.devfest.dagger2codelab.di.modules.ApplicationModule;
 import de.devfest.dagger2codelab.ui.adapter.UsersListAdapter;
 import de.devfest.dagger2codelab.ui.adapter.UsersListAdapter.UserListListener;
 

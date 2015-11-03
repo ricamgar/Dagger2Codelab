@@ -1,7 +1,5 @@
 package de.devfest.dagger2codelab.di.components;
 
-import android.content.Context;
-
 import dagger.Component;
 import de.devfest.dagger2codelab.data.api.GitHubApi;
 import de.devfest.dagger2codelab.di.modules.ApplicationModule;
@@ -16,8 +14,6 @@ public interface ApplicationComponent {
 	void inject(MainActivity activity);
 	void inject(RepositoriesActivity activity);
 
-	Context getApplicationContext();
-
 	GitHubApi getGitHubApi();
 
 	/**
@@ -25,7 +21,8 @@ public interface ApplicationComponent {
 	 */
 	final class Initializer {
 
-		private Initializer(){}
+		private Initializer() {
+		}
 
 		public static ApplicationComponent init(ApplicationModule applicationModule) {
 			return DaggerApplicationComponent.builder()
