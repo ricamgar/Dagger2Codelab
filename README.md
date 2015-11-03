@@ -36,11 +36,11 @@ Sync the project and, if everything works, go to the next Part!
 
 Scopes in Dagger2 is the mechanism to keep single instances of classes as long as their scope exist.
 
-In this section we will create the scope ``@ApplicationScope`` to create instances which will live as long as the Application object. This Scope is similar to use the `@Singleton`` annotation.
+In this section we will create the scope `@ApplicationScope` to create instances which will live as long as the Application object. This Scope is similar to use the `@Singleton` annotation.
 
 We will extend the scopes mechanism on Part 5.
 
-To create a Scope we need to define an Interface. We will create it under ``di/scopes`` directory.
+To create a Scope we need to define an Interface. We will create it under `di/scopes` directory.
 
 ```java
 @Scope
@@ -55,7 +55,7 @@ Now that we created our first scope, let´s use it in our components.
 
 Modules and Components are the main elements in Dagger2.
 
-Modules are classes with methods to provide dependencies. To create a module we need to annotate a class with ```@Module```. We can create it on the ``di/modules`` directory. In the module, we can Provide the dependencies we need. For that we will use the ``@rovides`` annotation and our Scope.
+Modules are classes with methods to provide dependencies. To create a module we need to annotate a class with `@Module`. We can create it on the `di/modules` directory. In the module, we can Provide the dependencies we need. For that we will use the `@Provides` annotation and our Scope.
 
 ```java
 	@ApplicationScope
