@@ -80,7 +80,13 @@ public interface ApplicationComponent {
 }
 ```
 
-Ok, we have Modules and Components but, how to use them? Let´s inject them!
+And now we need to link them together. We will add the Applcation Module to the `@Component` annotation.
+
+```java
+@Component(modules = ApplicationModule.class)
+```
+
+Ok, we have Modules, Components and they are linked together but, how to use them? Let´s inject!
 
 ### Part 4 - Inject services
 
