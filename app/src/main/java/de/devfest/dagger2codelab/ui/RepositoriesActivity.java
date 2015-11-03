@@ -1,4 +1,4 @@
-package com.ricamgar.dagger2codelab.ui;
+package de.devfest.dagger2codelab.ui;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,11 +8,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
-import com.ricamgar.dagger2codelab.R;
-import com.ricamgar.dagger2codelab.data.api.GitHubApi;
-import com.ricamgar.dagger2codelab.data.api.GitHubApiService;
-import com.ricamgar.dagger2codelab.data.response.RepositoryResponse;
-import com.ricamgar.dagger2codelab.ui.adapter.ReposListAdapter;
+import de.devfest.dagger2codelab.R;
+import de.devfest.dagger2codelab.data.api.GitHubApi;
+import de.devfest.dagger2codelab.data.api.GitHubApiService;
+import de.devfest.dagger2codelab.data.response.RepositoryResponse;
+import de.devfest.dagger2codelab.ui.adapter.ReposListAdapter;
 
 import java.util.List;
 
@@ -25,7 +25,7 @@ import rx.schedulers.Schedulers;
  */
 public class RepositoriesActivity extends AppCompatActivity {
 
-	private static final String EXTRA_USER_LOGIN = "com.ricamgar.dagger2codelab.USER_LOGIN";
+	private static final String EXTRA_USER_LOGIN = "de.devfest.dagger2codelab.USER_LOGIN";
 
 	private GitHubApi service;
 

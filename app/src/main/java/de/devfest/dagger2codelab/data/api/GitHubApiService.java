@@ -1,9 +1,8 @@
-package com.ricamgar.dagger2codelab.data.api;
+package de.devfest.dagger2codelab.data.api;
 
 import android.content.Context;
 
-import com.ricamgar.dagger2codelab.R;
-
+import de.devfest.dagger2codelab.R;
 import retrofit.RestAdapter;
 
 /**

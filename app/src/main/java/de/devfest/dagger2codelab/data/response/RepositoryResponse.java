@@ -1,4 +1,4 @@
-package com.ricamgar.dagger2codelab.data.response;
+package de.devfest.dagger2codelab.data.response;
 
 import java.util.Date;
 

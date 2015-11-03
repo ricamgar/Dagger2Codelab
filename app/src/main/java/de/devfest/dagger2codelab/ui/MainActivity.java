@@ -1,4 +1,4 @@
-package com.ricamgar.dagger2codelab.ui;
+package de.devfest.dagger2codelab.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,12 +6,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
-import com.ricamgar.dagger2codelab.R;
-import com.ricamgar.dagger2codelab.data.api.GitHubApi;
-import com.ricamgar.dagger2codelab.data.api.GitHubApiService;
-import com.ricamgar.dagger2codelab.data.response.UserResponse;
-import com.ricamgar.dagger2codelab.ui.adapter.UsersListAdapter;
-import com.ricamgar.dagger2codelab.ui.adapter.UsersListAdapter.UserListListener;
+import de.devfest.dagger2codelab.R;
+import de.devfest.dagger2codelab.data.api.GitHubApi;
+import de.devfest.dagger2codelab.data.api.GitHubApiService;
+import de.devfest.dagger2codelab.data.response.UserResponse;
+import de.devfest.dagger2codelab.ui.adapter.UsersListAdapter;
+import de.devfest.dagger2codelab.ui.adapter.UsersListAdapter.UserListListener;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package com.ricamgar.dagger2codelab.data.api;
+package de.devfest.dagger2codelab.data.api;
 
-import com.ricamgar.dagger2codelab.data.response.RepositoryResponse;
-import com.ricamgar.dagger2codelab.data.response.UserResponse;
+import de.devfest.dagger2codelab.data.response.RepositoryResponse;
+import de.devfest.dagger2codelab.data.response.UserResponse;
 
 import java.util.List;
 
