@@ -35,7 +35,7 @@ Sync the project and, if everything works, go to the next Part!
 
 Scopes in Dagger2 is the mechanism to keep single instances of classes as long as their scope exist.
 
-In this section we will create the scope ``@ActivityScope`` to create instances which will live as long as the Application object. This Scope is similar to use the `@Singleton`` annotation.
+In this section we will create the scope ``@ApplicationScope`` to create instances which will live as long as the Application object. This Scope is similar to use the ``@Singleton`` annotation.
 
 We will extend the scopes mechanism on Part 5.
 
@@ -44,7 +44,7 @@ To create a Scope we need to define an Interface. We will create it under ``d/sc
 ```java
 @Scope
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ActivityScope {
+public @interface ApplicationScope {
 }
 ```
 
