@@ -19,4 +19,8 @@ public class DaggerApp extends Application {
 	public ApplicationComponent getApplicationComponent() {
 		return applicationComponent;
 	}
+
+	public void setApplicationComponent(ApplicationComponent applicationComponent) {
+		this.applicationComponent = applicationComponent;
+	}
 }

@@ -20,7 +20,7 @@ public class ApplicationModule {
 
 	@ApplicationScope
 	@Provides
-	GitHubApi provideGitHubApi(){
+	protected GitHubApi provideGitHubApi(){
 		RestAdapter restAdapter = new RestAdapter.Builder()
 				.setEndpoint(context.getString(R.string.endpoint))
 				.build();

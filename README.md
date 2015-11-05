@@ -142,5 +142,58 @@ Now build, run and enjoy!
 
 ### Part 5 - Testing
 
+In the tests, we want to use a mocked api service. Therefore we will create a module mock the api and use it in our application component.
+
+First, we are going to include the needed test dependencies.
+
+```groovy
+	androidTestCompile 'junit:junit:4.12'
+	androidTestCompile 'com.android.support:support-annotations:23.1.0'
+	androidTestCompile 'com.android.support.test:runner:0.4'
+	androidTestCompile 'com.android.support.test:rules:0.4'
+```
+
+Now we are ready to start! To create the mock module, we extend the `ApplicationModule` and override the method, which is returning our api.
+
+```java
+	public class TestApplicationModule extends ApplicationModule {
+	...
+
+	@Override
+	protected GitHubApi provideGitHubApi() {
+		// our mocked api
+	}
+```
+
+The next step is to create the MainActivityTest class. There we will create the Application Component with the mock module.
+
+```java
+	@Test
+	public void testResponse() throws Exception {
+		ApplicationComponent applicationComponent = DaggerApplicationComponent
+				.builder()
+				.applicationModule(new TestApplicationModule(null))
+				.build();
+
+		...
+	}
+```
+
+Once we have the Component, we set it to the Application class.
+
+```java
+	Instrumentation instrumentation = InstrumentationRegistry.getInstrumentation();
+	((DaggerApp)instrumentation.getTargetContext().getApplicationContext()).setApplicationComponent(applicationComponent);
+```
+
+The last step is to launch the activity and add some sleep to see the results:
+
+```java
+	activityTestRule.launchActivity(new Intent());
+	Thread.sleep(10000);
+```
+
+You are ready to run and see the mock response! It was easy, or? :)
+
 
 [apt]: https://bitbucket.org/hvisser/android-apt
